@@ -1,20 +1,27 @@
 #include <iostream>
+#include <string>
 #include <cmath>
-using namespace std;
+ 
+void solve() {
+    std::string s;
+    std::cin >> s;
+    int year = std::stoi(s);
+    int root = static_cast<int>(round(sqrt(year)));
+    if (root * root == year) {
+        std::cout << 0 << " " << root << std::endl;
+    } else {
+        std::cout << -1 << std::endl;
+    }
+}
  
 int main() {
-    ios_base::sync_with_stdio(false);
-    cin.tie(nullptr);
+    std::ios_base::sync_with_stdio(false);
+    std::cin.tie(NULL);
+ 
     int t;
-    cin >> t;
+    std::cin >> t;
     while (t--) {
-        long long n;
-        cin >> n;
-        long long k = sqrt(n);
-        if (k * k < n) {
-            k++;
-        }
-        cout << k - 1 << '\n';
+        solve();
     }
     return 0;
 }
